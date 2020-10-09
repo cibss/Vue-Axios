@@ -12,7 +12,7 @@ export default {
     async asyncData({ $axios }) {
         const testimonial  = await $axios.get('http://localhost:3000/api/fe/web/testimonials')
         return {
-            testimonial
+            testimonial: testimonial.data
         }
     }
 }
