@@ -2,7 +2,14 @@
   <div class="container">
     <div>
         <h1>API Practice</h1>
-        <p>{{ testimonial }}</p>
+        <div v-for="testi in testimonial" :key="testi.id">
+            <!-- <img src="{{ testi.photo.url }}"/> -->
+            <p>{{ testi.title }}</p>
+            <p>{{ testi.userName }}</p>
+            <p>{{ testi.category }}</p>
+            <p>{{ testi.excerpt }}</p>
+        </div>
+        
     </div>
   </div>
 </template>
