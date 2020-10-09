@@ -2,7 +2,7 @@
   <div class="container">
     <div>
         <h1>API Practice</h1>
-        <p>{{ testimonial.title }}</p>
+        <p>{{ testimonial }}</p>
     </div>
   </div>
 </template>
