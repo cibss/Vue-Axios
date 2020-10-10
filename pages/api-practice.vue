@@ -1,19 +1,19 @@
 <template>
-  <div class="container">
+  <div class="container mt-5">
     <div>
-        <!-- <h1>API Practice</h1> -->
     
         <VueSlickCarousel v-bind="settings" class="carousel">
             <div>
-                <h5 class="left"> <b>APA KATA MEREKA</b> </h5>
+                <h5 class="mb-5"> <b>APA KATA MEREKA</b> </h5>
                 <b-row>
                     <b-col  v-for="testi in testimonial" :key="testi.id">
-                        <b-card class="card-size" >
-                            <b-card-text class="left">
+                        <b-card class="card-size" >     
+                            <b-avatar :src="testi.photo.url" size="lg" class="ava"/>
+                            <b-card-text class="mt-4">
                                 <b> {{ testi.userName }} </b>
                             </b-card-text>
 
-                            <b-card-text class="left">
+                            <b-card-text>
                                 {{ testi.excerpt }}
                             </b-card-text>
                         </b-card>
@@ -21,27 +21,6 @@
                 </b-row>
             </div>
         </VueSlickCarousel>
-
-        
-
-        <!-- <div>
-            <h5 class="left"> <b>APA KATA MEREKA</b> </h5>
-            <b-row>
-                <b-col v-for="testi in testimonial" :key="testi.id">
-                    <b-card class="card-size mb-2" >
-                        <b-img :src="require(`${testi.photo.small}`)"/>
-                        <b-img :src="require(`${testi.photo.small}`)"/>
-                        <b-card-text class="left">
-                            <b> {{ testi.userName }} </b>
-                        </b-card-text>
-
-                        <b-card-text class="left">
-                            {{ testi.excerpt }}
-                        </b-card-text>
-                    </b-card>
-                </b-col>
-            </b-row>
-        </div> -->
 
     </div>
   </div>
@@ -65,9 +44,6 @@ export default {
     },
     data () {
         return {
-            slide: 0,
-            sliding: null,
-
             settings: {
                 arrows: true,
                 dots: true,
@@ -88,13 +64,8 @@ export default {
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .left{
+        align-items: left;
         text-align: left;
-        color: black;
     }
 
     p {
@@ -104,6 +75,11 @@ export default {
     .card-size{
         width: 291px;
         height: 420px;
+    }
+
+    .ava {
+        position: absolute;
+        top: -7%;
     }
 
 </style>
